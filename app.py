@@ -1,5 +1,6 @@
 import time
 import json
+from Models.City import City
 from binary_search import binary_search
 from linear_search import lienar_search
 
@@ -10,18 +11,18 @@ if __name__ == "__main__":
         cities = json.load(file)
 
     ordenaded_cities = sorted(city["nome"] for city in cities)
+    ordenaded_cities_objects = [City(name) for name in ordenaded_cities]
 
     item = "Paris"
 
-    star_time_binary = time.perf_counter()
     result = binary_search(ordenaded_cities, item)
-    end_time_binary = time.perf_counter()
-    time_binary = (end_time_binary - star_time_binary) * 1000
 
-    starr_time_linear = time.perf_counter()
-    result_linear = lienar_search(ordenaded_cities, item)
-    end_time_linear = time.perf_counter()
-    time_linear = (end_time_linear - starr_time_linear) * 1000
+    if result is not None:
+        city_found = ordenaded_cities_objects[result]
+        city_found.add_hotel("Hotel Tour Eiffel", "Paris, França", 5, 1200)
+        city_found.add_hotel("Hotel Budget Paris", "Paris, França", 3, 450)
 
-    print(f"Binary Search Result: {result}, Time taken: {time_binary:.6f} ms")
-    print(f"Linear Search Result: {result_linear}, Time taken: {time_linear:.6f} ms")
+        print(f"\nHotels in {city_found.name}:")
+        city_found.list_hotels()
+    else:
+        print(f"\nCity '{item}' not found.")

@@ -14,3 +14,8 @@ def binary_search(list, item):
             low = mid + 1
 
     return None
+
+def binary_search_cities(cities, city):
+    names = [city.name for city in cities]
+    index = binary_search(names, city.name) 
+    return index
