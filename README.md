@@ -1,3 +1,4 @@
+# 🧠 Grokking Algorithms in Python — Hotel Booking Project
 This project is a practical exploration of the algorithms presented in the book [**Grokking Algorithms**](https://www.manning.com/books/grokking-algorithms) by Aditya Y. Bhargava. Instead of isolated code examples, each algorithm is applied in the context of a real-world hotel booking website.
 
 ## 🌐 Project Description
