@@ -25,6 +25,3 @@ if __name__ == "__main__":
 
     print(f"Binary Search Result: {result}, Time taken: {time_binary:.6f} ms")
     print(f"Linear Search Result: {result_linear}, Time taken: {time_linear:.6f} ms")
-    print(f"Binary Search was {'faster' if time_binary < time_linear else 'slower'} than Linear Search")
-    print(f"Time difference: {abs(time_binary - time_linear):.6f} ms")
-    print(f"Total cities searched: {len(ordenaded_cities)}") 
