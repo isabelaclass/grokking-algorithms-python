@@ -16,3 +16,14 @@ class Hotel:
             while current.next:
                 current = current.next
             current.next = new_hotel
+
+def sort_selection_hotel_price(hotels):
+    n = len(hotels)
+    for i in range(n):
+        min_idx = i
+        for j in range(i + 1, n):
+            if hotels[j]["price_per_night"] < hotels[min_idx]["price_per_night"]:
+                min_idx = j
+        if min_idx != i:
+            hotels[i], hotels[min_idx] = hotels[min_idx], hotels[i]
+    return hotels

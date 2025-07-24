@@ -1,6 +1,7 @@
 import time
 import json
 from Models.City import City
+from Models.Hotel import sort_selection_hotel_price
 from binary_search import binary_search
 from linear_search import lienar_search
 
@@ -24,5 +25,11 @@ if __name__ == "__main__":
 
         print(f"\nHotels in {city_found.name}:")
         city_found.list_hotels()
+        hotel_array = city_found.return_hotels_array()
+        print(f"\nHotels array: {hotel_array}")
+        sorted_hotels = sort_selection_hotel_price(hotel_array)
+        print("\nSorted hotels by price:")
+        for hotel in sorted_hotels:
+            print(f"- {hotel['name']} ({hotel['location']}) - {hotel['rating']}★ - R$ {hotel['price_per_night']}/night")
     else:
         print(f"\nCity '{item}' not found.")

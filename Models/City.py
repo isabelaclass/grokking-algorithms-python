@@ -24,3 +24,16 @@ class City:
         while current:
             print(f"Hotel Name: {current.name}, Location: {current.location}, Rating: {current.rating}, Price per Night: ${current.price_per_night}")
             current = current.next
+    
+    def return_hotels_array(self):
+        hotels = []
+        current = self.hotels_head
+        while current:
+            hotels.append({
+                "name": current.name,
+                "location": current.location,
+                "rating": current.rating,
+                "price_per_night": current.price_per_night
+            })
+            current = current.next
+        return hotels
