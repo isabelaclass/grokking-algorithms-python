@@ -1,4 +1,4 @@
-from Models.Hotel import Hotel
+from Models.Hotel import Hotel, sum_price_hotels, find_max_price_recursive
 
 class City:
     def __init__(self, name):
@@ -37,3 +37,9 @@ class City:
             })
             current = current.next
         return hotels
+    
+    def sum_prices(self):
+        return sum_price_hotels(self.hotels_head)
+    
+    def get_max_price(self):
+        return find_max_price_recursive(self.hotels_head)

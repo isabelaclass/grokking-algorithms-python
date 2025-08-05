@@ -1,4 +1,3 @@
-
 class Hotel:
     def __init__(self, name, location, rating, price_per_night):
         self.name = name
@@ -27,3 +26,15 @@ def sort_selection_hotel_price(hotels):
         if min_idx != i:
             hotels[i], hotels[min_idx] = hotels[min_idx], hotels[i]
     return hotels
+
+def sum_price_hotels(hotels):
+    if hotels is None:
+        return 0
+    return hotels.price_per_night + sum_price_hotels(hotels.next)
+
+def find_max_price_recursive(hotels, current_max=0):
+    if hotels is None:
+        return current_max
+    if hotels.price_per_night > current_max:
+        current_max = hotels.price_per_night
+    return find_max_price_recursive(hotels.next, current_max)

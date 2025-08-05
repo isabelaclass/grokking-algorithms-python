@@ -25,6 +25,13 @@ if __name__ == "__main__":
 
         print(f"\nHotels in {city_found.name}:")
         city_found.list_hotels()
+
+        total_price = city_found.sum_prices()
+        print(f"\nSoma total dos preços por noite: R$ {total_price}")
+
+        max_price = city_found.get_max_price()
+        print(f"\nPreço máximo por noite: R$ {max_price}")
+
         hotel_array = city_found.return_hotels_array()
         print(f"\nHotels array: {hotel_array}")
         sorted_hotels = sort_selection_hotel_price(hotel_array)
